@@ -1,71 +1,28 @@
-<script setup lang="ts">
+<script setup>
 
-  function calcularEvasao(){
 
-      //upload Planilha de Matrículas
 
-      //upload Planilha de Egressantes
-
-      //upload Planilha de Ingressantes
-
-      //upload de Excluídos
-    
-
-    //promisse all
-
-    //invocar o calcEvasao
-
-  }
-
-  
 
 </script>
 
-<template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <template>
+      <h1>Sistema de Calculo de Evasão</h1>
+      <p>
+        <strong>Pagina Atual:</strong> {{ $route.fullPath }}
+      </p>
+      <nav>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/about">Go to About</RouterLink>
+      </nav>
+      <main>
+        <RouterView />
+      </main>
 
-    <div class="planilhas">
-      <div>
-
-        Planilha de Matrículas
-        <input type="file">
-      </div>
-
-      <div>
-        Planilha de Egressantes
-        <input type="file">
-      </div>
-      <div>
-        Planilha de Ingressantes
-        <input type="file">
-      </div>
-      <div>
-        Planilha de Excluídos
-        <input type="file">
-      </div>
-      <div>
-      <button> Calcular Evasão</button>
-      </div>
-
-    </div>
-  </header>
-
-
-</template>
+    </template>
 
 <style scoped>
 
-.planilhas{
-  display: flex;
-  flex-direction: column;
-  
 
-}
-.planilhas> div{
-  padding: 0.5em;
-
-  }
 
 header {
   line-height: 1.5;
