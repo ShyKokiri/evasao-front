@@ -7,7 +7,6 @@
   import {ref} from "vue"
 
 
-
   // export default{
   //   setup(){
   //     const egressantesUploaded = ref( false)
@@ -30,12 +29,23 @@
   //  return excluidosUploaded && ingressantesUploaded && egressantesUploaded && matriculaUploaded
   // }
 
-  //   function calcularEvasao(){
-  //       get ("/calc").then ( (dado)=>{
-
-  //         dados = ///resultado 
-  //       })
-  //   }
+     function calcularEvasao(){
+      
+        fetch ("http://localhost:9000/upload/calc", {
+              method:'GET',
+              headers:{
+                'Accept':'application/json'
+              },
+            
+            }).then( (response)=>{
+               console.log(response)
+               return response.json()
+            }).then ( (json)=>{
+             console.log(json)
+           
+         
+            })
+     }
 </script>
 
 <template>
@@ -54,12 +64,12 @@
 
     <Resultado/>
     
-    <!-- <div>
-    <button :enable="habilitarCalculo()" @click="calcularEvasao()"> Calcular Evasão</button>
-    </div>  -->
-     <button > Calcular Evasão</button> 
+   
+    <button  @click="calcularEvasao()"> Calcular Evasão</button>
+    </div>  
+   
   
-  </div>
+
 
   </main>
 </template>
