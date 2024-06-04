@@ -25,15 +25,17 @@
             fetch ("http://localhost:9000/upload/excluidos", {
               method:'POST',
               headers:{
-                'Accept':'application/json', 
-                'Content-type':'multipart/form-data'
+                'Accept':'application/json'
               },
               body:formData
             }).then( (response)=>{
+               console.log(response)
                 return response.json()
             }).then ( (json)=>{
-              status.value="Concluído!"
-              console.log(json)
+            
+             status.value="Concluído!"
+             console.log(json)
+              console.log("Era pra ter json")
             })
 
         } 
