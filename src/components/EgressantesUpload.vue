@@ -41,9 +41,6 @@ import {ref} from "vue"
 
       async  function handleFileUpload(event){
         fileToUpload =   event.target.files[0] 
-
-
-
         }
 
         return {enviarEgressantes, status, handleFileUpload}

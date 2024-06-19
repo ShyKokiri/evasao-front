@@ -38,12 +38,13 @@
               },
             
             }).then( (response)=>{
-               console.log(response)
-               return response.json()
-            }).then ( (json)=>{
-             console.log(json)
-           
-         
+              return {json:response.json(),status:response.status}
+              }).then ( (result)=>{
+                if(result.status == 500){
+                  result.json.then ( j =>{
+                    alert(j.erro)
+                  })
+                }
             })
      }
 </script>
@@ -56,12 +57,12 @@
 
     <EgressantesUpload  />
 
-    <ExcluidosUpload/> 
-
-    <MatriculaUpload/>
-
     <IngressantesUpload/>
-
+    
+    <MatriculaUpload/>
+    
+    <ExcluidosUpload/> 
+    
     <Resultado/>
     
    
