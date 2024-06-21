@@ -1,5 +1,5 @@
 <script>
-import {ref} from "vue"
+import {ref, defineExpose} from "vue"
 
   // function uploadExcluidos(){
   //     post ("http://...").then ( ()=> {
@@ -40,13 +40,19 @@ import {ref} from "vue"
         } 
 
       async  function handleFileUpload(event){
-        fileToUpload =   event.target.files[0] 
-
-
-
+        fileToUpload =   event.target.files[0]
+      }
+        
+        function limparMensagem(){
+          status.value=""
         }
 
-        return {enviarMatriculas, status, handleFileUpload}
+      defineExpose({
+              limparMensagem
+          })
+
+        return {enviarMatriculas, status, handleFileUpload, limparMensagem}
+
     }
   }
 

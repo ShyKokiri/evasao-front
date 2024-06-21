@@ -1,7 +1,7 @@
-<script>
-import {ref} from "vue"
+<script >
+import {ref, defineExpose} from "vue"
 
-  // function uploadExcluidos(){
+  // function uploadExcluidos(){  
   //     post ("http://...").then ( ()=> {
   //         $emit ("excluidos-uploaded-event")
   //     } )
@@ -43,7 +43,19 @@ import {ref} from "vue"
         fileToUpload =   event.target.files[0] 
         }
 
-        return {enviarEgressantes, status, handleFileUpload}
+        function limparMensagem(){
+          status.value=""
+        }
+
+      defineExpose({
+              limparMensagem
+          })
+
+        return {enviarEgressantes, status, handleFileUpload, limparMensagem}
+    
+     
+
+
     }
   }
 
