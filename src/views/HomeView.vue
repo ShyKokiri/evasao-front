@@ -22,11 +22,15 @@ function calcularEvasao() {
 
   }).then((response) => {
     return { json: response.json(), status: response.status }
-  }).then((result) => {
+  }).then(async(result) => {
     if (result.status == 500) {
       result.json.then(j => {
         alert(j.erro)
       })
+    }
+    else {
+      const r = await result.json
+      console.log(r)
     }
 
     localEgressantes.value.limparMensagem()
@@ -46,16 +50,18 @@ function calcularEvasao() {
 
       <EgressantesUpload ref="localEgressantes" />
 
-      <IngressantesUpload ref="localIngressantes"/>
+      <IngressantesUpload ref="localIngressantes" />
 
-      <MatriculaUpload ref="localMatriculas"/>
+      <MatriculaUpload ref="localMatriculas" />
 
-      <ExcluidosUpload ref="localExcluidos"/>
+      <ExcluidosUpload ref="localExcluidos" />
 
-      <Resultado />
+ 
 
 
       <button @click="calcularEvasao()"> Calcular Evasão</button>
+
+      <Resultado />
     </div>
 
 
