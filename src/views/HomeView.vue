@@ -10,7 +10,7 @@ const localEgressantes = ref(null)
 const localIngressantes = ref(null)
 const localExcluidos = ref(null)
 const localMatriculas = ref(null)
-
+const resultadoCalculado = ref([])
 
 function calcularEvasao() {
 
@@ -31,6 +31,9 @@ function calcularEvasao() {
     else {
       const r = await result.json
       console.log(r)
+
+      //alimentar um array
+      resultadoCalculado.value = r
     }
 
     localEgressantes.value.limparMensagem()
@@ -44,10 +47,7 @@ function calcularEvasao() {
 
 <template>
   <main>
-
     <div class="planilhas">
-
-
       <EgressantesUpload ref="localEgressantes" />
 
       <IngressantesUpload ref="localIngressantes" />
@@ -56,15 +56,10 @@ function calcularEvasao() {
 
       <ExcluidosUpload ref="localExcluidos" />
 
- 
+      <button @click="calcularEvasao()" > Calcular Evasão</button>
 
-
-      <button @click="calcularEvasao()"> Calcular Evasão</button>
-
-      <Resultado />
+      <Resultado :result="resultadoCalculado" :show="resultadoCalculado.length > 0" />
     </div>
-
-
   </main>
 </template>
 <style>

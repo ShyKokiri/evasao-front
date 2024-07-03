@@ -1,34 +1,21 @@
-<script>
-import { ref, defineExpose } from "vue"
+<script setup >
+import { ref, defineExpose, toRefs } from "vue"
+
+const props = defineProps({
+  result: Array,
+  show:Boolean
+ 
+})
+
+const {show, result} = toRefs (props)
 
 
-
-export default {
-
-    setup() {
-
-        const result = ref([
-            {
-                ano: 2010,
-                taxaSucesso: 50,
-                taxaEvasao: 50,
-            },
-            {
-                ano: 2010,
-                taxaSucesso: 50,
-                taxaEvasao: 50,
-            },
-        ])
-
-        return { result }
-    }
-}
 </script>
 
 <template>
-    <div>
+    <div  v-if="show" >
 
-    <h1>RESULTADO</h1>
+    <h1 >RESULTADO</h1>
         <table>
             <tr>
                 <th>
