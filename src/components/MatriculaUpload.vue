@@ -41,6 +41,7 @@ import {ref, defineExpose} from "vue"
 
       async  function handleFileUpload(event){
         fileToUpload =   event.target.files[0]
+        enviarMatriculas()
       }
         
         function limparMensagem(){
@@ -64,6 +65,5 @@ import {ref, defineExpose} from "vue"
         Planilha de Matriculas 
 
         <input type="file" @change="handleFileUpload($event)">
-        <button @click="enviarMatriculas()">Enviar</button>
   </div>
 </template>

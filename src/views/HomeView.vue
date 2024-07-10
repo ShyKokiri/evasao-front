@@ -47,27 +47,34 @@ function calcularEvasao() {
 
 <template>
   <main>
-    <div class="planilhas">
-      <EgressantesUpload ref="localEgressantes" />
+    <div id="container">
+        <div class="planilhas">
 
-      <IngressantesUpload ref="localIngressantes" />
+          <EgressantesUpload ref="localEgressantes" />
 
-      <MatriculaUpload ref="localMatriculas" />
+          <IngressantesUpload ref="localIngressantes" />
 
-      <ExcluidosUpload ref="localExcluidos" />
+          <MatriculaUpload ref="localMatriculas" />
 
-      <button @click="calcularEvasao()" > Calcular Evasão</button>
+          <ExcluidosUpload ref="localExcluidos" />
 
-      <Resultado :result="resultadoCalculado" :show="resultadoCalculado.length > 0" />
+          <button @click="calcularEvasao()" > Calcular Evasão</button>
+
+        </div>
+        <div>
+          <Resultado :result="resultadoCalculado" :show="resultadoCalculado.length > 0" />
+        </div>
     </div>
   </main>
 </template>
 <style>
+#container{
+  display: flex;
+  flex-direction: row;
+} 
 .planilhas {
   display: flex;
   flex-direction: column;
-
-
 }
 
 .planilhas>div {

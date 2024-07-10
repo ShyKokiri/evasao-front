@@ -42,6 +42,7 @@
 
       async  function handleFileUpload(event){
         fileToUpload =   event.target.files[0] 
+        enviarExcluidos()
       }
 
         function limparMensagem(){
@@ -65,6 +66,5 @@
         Planilha de Excluídos 
 
         <input type="file" @change="handleFileUpload($event)">
-        <button @click="enviarExcluidos()">Enviar</button>
   </div>
 </template>

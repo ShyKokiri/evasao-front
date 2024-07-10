@@ -39,8 +39,9 @@ import {ref, defineExpose} from "vue"
 
         } 
 
-      async  function handleFileUpload(event){
-        fileToUpload =   event.target.files[0] 
+      async function handleFileUpload(event){
+        fileToUpload = event.target.files[0]
+        enviarEgressantes() 
         }
 
         function limparMensagem(){
@@ -67,6 +68,6 @@ import {ref, defineExpose} from "vue"
         Planilha de Egressantes 
 
         <input type="file" @change="handleFileUpload($event)">
-        <button @click="enviarEgressantes()">Enviar</button>
+        
   </div>
 </template>
