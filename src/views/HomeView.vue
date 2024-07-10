@@ -61,24 +61,36 @@ function calcularEvasao() {
           <button @click="calcularEvasao()" > Calcular Evasão</button>
 
         </div>
-        <div>
+        <div class="resultado-container">
           <Resultado :result="resultadoCalculado" :show="resultadoCalculado.length > 0" />
         </div>
     </div>
   </main>
 </template>
-<style>
-#container{
+<style>/* Ajustes adicionais para garantir que não haja sobreposição */
+#container {
   display: flex;
   flex-direction: row;
-} 
-.planilhas {
-  display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start; /* Alinha os itens ao início, evitando esticamento */
 }
 
-.planilhas>div {
-  padding: 0.5em;
+#container > div {
+  padding: 1em;
+  flex: 1 1 250px; /* Ajusta flex-grow, flex-shrink e flex-basis */
+  box-sizing: border-box; /* Garante que padding seja incluído no cálculo da largura */
+}
 
+.resultado-container {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto; /* Adiciona rolagem horizontal se necessário */
+}
+
+@media (max-width: 768px) {
+  #container {
+    flex-direction: column; /* Muda para layout de coluna em telas menores */
+  }
 }
 </style>
