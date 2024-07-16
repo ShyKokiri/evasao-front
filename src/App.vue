@@ -19,7 +19,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Use 100vh as the height of the viewport */
+
   flex-direction: column; /* Adicionado para garantir centralização vertical */
 }
 
