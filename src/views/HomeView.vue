@@ -57,7 +57,7 @@ function calcularEvasao() {
           <MatriculaUpload ref="localMatriculas" />
 
           <ExcluidosUpload ref="localExcluidos" />
-
+            <br>
           <button @click="calcularEvasao()" > Calcular Evasão</button>
 
         </div>

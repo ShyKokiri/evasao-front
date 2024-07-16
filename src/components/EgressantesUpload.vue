@@ -62,12 +62,20 @@ import {ref, defineExpose} from "vue"
 
 </script>
 <template>
-    <div>
-        status: {{status}} <br>
-        
-        Planilha de Egressantes 
+    <div class="planilhas">
 
-        <input type="file" @change="handleFileUpload($event)">
+      <h2>Upload de Egressantes</h2>
+  
+      <input type="file" @change="handleFileUpload($event)">
+      <div>status: {{status}} </div>
         
   </div>
 </template>
+<style scoped>
+  .planilhas{
+    display: flex;
+    flex-direction: column;
+    align-items: left; /* Garante que os itens de main estejam centralizados horizontalmente */
+    text-align: left; /* Centraliza o texto e elementos inline dentro de main */
+  }
+  </style>
