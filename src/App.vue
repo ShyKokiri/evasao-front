@@ -19,20 +19,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  width: 100%;
   flex-direction: column; /* Adicionado para garantir centralização vertical */
 }
 
 main {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Garante que os itens de main estejam centralizados horizontalmente */
-  text-align: center; /* Centraliza o texto e elementos inline dentro de main */
+  align-items: left; /* Garante que os itens de main estejam centralizados horizontalmente */
+  text-align: left; /* Centraliza o texto e elementos inline dentro de main */
+}
+main div {
+  text-align: left;
+  
 }
 
-/* Se necessário, ajuste o estilo de .logo para garantir que a imagem também esteja centralizada */
-.logo {
-  display: block; /* Faz a imagem se comportar como um bloco para respeitar o alinhamento */
-  margin: 0 auto; /* Adiciona margem automática dos lados para centralizar horizontalmente */
-}
 </style>

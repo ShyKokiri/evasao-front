@@ -69,9 +69,11 @@ function calcularEvasao() {
 </template>
 <style>/* Ajustes adicionais para garantir que não haja sobreposição */
 #container {
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  width: 100%;
   align-items: flex-start; /* Alinha os itens ao início, evitando esticamento */
 }
 
