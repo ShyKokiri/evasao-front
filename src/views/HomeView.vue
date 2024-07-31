@@ -14,7 +14,7 @@ const resultadoCalculado = ref([])
 
 function calcularEvasao() {
 
-  fetch("http://localhost:9000/upload/calc", {
+  fetch("http://localhost:9000/upload/calc?curso=CIÊNCIA DA COMPUTAÇÃO - BACHARELADO", {
     method: 'GET',
     headers: {
       'Accept': 'application/json'
