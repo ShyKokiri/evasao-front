@@ -54,8 +54,6 @@ import {ref, defineExpose} from "vue"
 
         return {enviarEgressantes, status, handleFileUpload, limparMensagem}
     
-     
-
 
     }
   }
